@@ -1,0 +1,38 @@
+ex_name: ex_name
+device: 0
+ckpt_dir: checkpoints
+split_seed: 42
+optimizer: adam
+ema_start_epoch: 0
+use_pretrained: true
+pretrained_model_parameter_dir: ../../../pretrained_QM9/results_best.pt
+trained_model: ''
+seed: 0
+resume_ckpt: ''
+datasets:
+  dataset_name: Nap
+  db_path: ../../../napthalene_dataset_5000.db
+  convention: pyscf_dzp
+  pos_unit_in_db: Angstrom
+  seed: 42
+  max_items: 5000
+  train_ratio: 0.8
+  val_ratio: 0.15
+  test_ratio: 0.05
+  train_batch_size: 32
+  valid_batch_size: 32
+  test_batch_size: 0
+  num_workers: 4
+  pin_memory: true
+  learning_rate: 0.0001
+  warmup_steps: 0
+  total_steps: 40000
+  validation_batch_interval: 250
+  train_batch_interval: 50
+  lr_end: 1.0e-05
+  use_gradient_clipping: true
+  clip_norm: 1.0
+  run_steps: 50000
+  basis_dat_path: ../../../dzp_q-chem.dat
+  homo_guard_tol: 0.005
+  homo_eval_size: 20

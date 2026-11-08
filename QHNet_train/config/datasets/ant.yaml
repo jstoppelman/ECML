@@ -1,0 +1,35 @@
+dataset_name: Ant
+db_path: /Data2/jason/qhnet/AIRS/datasets/Ant_dzp/ant_ml2_mono_2000.db
+convention: pyscf_dzp
+pos_unit_in_db: Angstrom
+
+# split / sampling
+seed: 42
+max_items: 1000
+train_ratio: 0.8
+val_ratio: 0.1
+test_ratio: 0.1
+
+# dataloader
+train_batch_size: 1
+valid_batch_size: 1
+test_batch_size: 0
+num_workers: 4
+pin_memory: True
+
+# training schedule
+learning_rate: 1e-4
+warmup_steps: 0
+total_steps: 40000
+validation_batch_interval: 250
+train_batch_interval: 50
+lr_end: 1e-5
+
+use_gradient_clipping: True
+clip_norm: 1.0
+
+run_steps: 50000
+
+basis_dat_path: /Data2/jason/qhnet/AIRS/OpenDFT/QHBench_dzp/QH9/dzp_q-chem.dat
+homo_guard_tol: 0.005
+homo_eval_size: 20

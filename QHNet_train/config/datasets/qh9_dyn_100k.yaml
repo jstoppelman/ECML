@@ -1,0 +1,31 @@
+dataset_name: QH9Dynamic_100k_dzp
+db_path: /Data2/jason/qhnet/AIRS/datasets/QH9Dynamic_100k_dzp/qh9_dyn_100k_99900.db
+convention: pyscf_dzp
+pos_unit_in_db: Bohr
+
+# split / sampling
+seed: 42
+max_items: 99900
+train_ratio: 0.8
+val_ratio: 0.1
+test_ratio: 0.1
+
+# dataloader
+train_batch_size: 50
+valid_batch_size: 50
+test_batch_size: 50
+num_workers: 4
+pin_memory: True
+
+# training schedule
+learning_rate: 1e-4
+warmup_steps: 0
+total_steps: 50000
+validation_batch_interval: 500
+train_batch_interval: 100
+lr_end: 1e-5
+
+use_gradient_clipping: True
+clip_norm: 1.0
+
+run_steps: 70000
